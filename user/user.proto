@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "golang_express_grpc/user";
+
+message User {
+  string id = 1;
+  string username = 2;
+  string email = 3;
+  string profile_picture = 4;
+}
+
+service UserService {
+  rpc GetUser(UserRequest) returns (User);
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse); 
+}
+
+message UserRequest {
+  string id = 1;
+}
+
+message CreateUserRequest {
+  string username = 1;
+  string email = 2;
+  string profile_picture = 3;
+}
+
+message CreateUserResponse {
+  bool success = 1;
+  string message = 2;
+}
