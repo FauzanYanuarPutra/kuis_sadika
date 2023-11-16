@@ -1,4 +1,3 @@
-// userService.ts
 import * as grpc from "@grpc/grpc-js";
 import { loadSync } from "@grpc/proto-loader";
 import { AppDataSource } from "../../data-source";
@@ -83,3 +82,4 @@ export const userService = {
   },
 
 };
+
